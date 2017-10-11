@@ -1,16 +1,16 @@
-# Build Geth in a stock Go builder container
+# Build bith in a stock Go builder container
 FROM golang:1.9-alpine as builder
 
 RUN apk add --no-cache make gcc musl-dev linux-headers
 
-ADD . /go-ethereum
-RUN cd /go-ethereum && make geth
+ADD . /go-bither
+RUN cd /go-bither && make bith
 
-# Pull Geth into a second stage deploy alpine container
+# Pull bith into a second stage deploy alpine container
 FROM alpine:latest
 
 RUN apk add --no-cache ca-certificates
-COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
+COPY --from=builder /go-bither/build/bin/bith /usr/local/bin/
 
-EXPOSE 8545 8546 30303 30303/udp
-ENTRYPOINT ["geth"]
+EXPOSE 7070 7071 41207 41207/udp
+ENTRYPOINT ["bith"]
