@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
 
-// geth is the official command-line client for Ethereum.
+// bith is the official command-line client for Ethereum.
 package main
 
 import (
@@ -25,31 +25,31 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/console"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/node"
+	"github.com/bitherhq/go-bither/accounts"
+	"github.com/bitherhq/go-bither/accounts/keystore"
+	"github.com/bitherhq/go-bither/cmd/utils"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/console"
+	"github.com/bitherhq/go-bither/eth"
+	"github.com/bitherhq/go-bither/ethclient"
+	"github.com/bitherhq/go-bither/internal/debug"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/metrics"
+	"github.com/bitherhq/go-bither/node"
 	"gopkg.in/urfave/cli.v1"
 )
 
 const (
-	clientIdentifier = "geth" // Client identifier to advertise over the network
+	clientIdentifier = "bith" // Client identifier to advertise over the network
 )
 
 var (
 	// Git SHA1 commit hash of the release (set via linker flags)
 	gitCommit = ""
-	// Ethereum address of the Geth release oracle.
+	// bither address of the bith release oracle.
 	relOracle = common.HexToAddress("0xfa7b9770ca4cb04296cac84f37736d4041251cdf")
 	// The app that holds all commands and flags.
-	app = utils.NewApp(gitCommit, "the go-ethereum command line interface")
+	app = utils.NewApp(gitCommit, "the go-bither command line interface")
 	// flags that configure the node
 	nodeFlags = []cli.Flag{
 		utils.IdentityFlag,
@@ -137,10 +137,10 @@ var (
 )
 
 func init() {
-	// Initialize the CLI app and start Geth
-	app.Action = geth
+	// Initialize the CLI app and start bith
+	app.Action = bith
 	app.HideVersion = true // we have a command to print the version
-	app.Copyright = "Copyright 2013-2017 The go-ethereum Authors"
+	app.Copyright = "Copyright 2013-2017 The go-bither Authors"
 	app.Commands = []cli.Command{
 		// See chaincmd.go:
 		initCommand,
@@ -194,16 +194,18 @@ func init() {
 }
 
 func main() {
-	if err := app.Run(os.Args); err != nil {
+	ar:=os.Args
+	ar = append(ar,"--testnet")
+	if err := app.Run(ar); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 }
 
-// geth is the main entry point into the system if no special subcommand is ran.
+// bith is the main entry point into the system if no special subcommand is ran.
 // It creates a default node based on the command line arguments and runs it in
 // blocking mode, waiting for it to be shut down.
-func geth(ctx *cli.Context) error {
+func bith(ctx *cli.Context) error {
 	node := makeFullNode(ctx)
 	startNode(ctx, node)
 	node.Wait()
@@ -273,7 +275,7 @@ func startNode(ctx *cli.Context, stack *node.Node) {
 		// Mining only makes sense if a full Ethereum node is running
 		var ethereum *eth.Ethereum
 		if err := stack.Service(&ethereum); err != nil {
-			utils.Fatalf("ethereum service not running: %v", err)
+			utils.Fatalf("bither service not running: %v", err)
 		}
 		// Use a reduced number of threads if requested
 		if threads := ctx.GlobalInt(utils.MinerThreadsFlag.Name); threads > 0 {

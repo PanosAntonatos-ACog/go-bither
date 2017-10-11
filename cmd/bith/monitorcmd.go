@@ -25,9 +25,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/bitherhq/go-bither/cmd/utils"
+	"github.com/bitherhq/go-bither/node"
+	"github.com/bitherhq/go-bither/rpc"
 	"github.com/gizak/termui"
 	"gopkg.in/urfave/cli.v1"
 )
@@ -55,7 +55,7 @@ var (
 		ArgsUsage: " ",
 		Category:  "MONITOR COMMANDS",
 		Description: `
-The Geth monitor is a tool to collect and visualize various internal metrics
+The bith monitor is a tool to collect and visualize various internal metrics
 gathered by the node, supporting different chart types as well as the capacity
 to display multiple metrics simultaneously.
 `,
@@ -73,10 +73,10 @@ func monitor(ctx *cli.Context) error {
 		client *rpc.Client
 		err    error
 	)
-	// Attach to an Ethereum node over IPC or RPC
+	// Attach to an bither node over IPC or RPC
 	endpoint := ctx.String(monitorCommandAttachFlag.Name)
 	if client, err = dialRPC(endpoint); err != nil {
-		utils.Fatalf("Unable to attach to geth node: %v", err)
+		utils.Fatalf("Unable to attach to bith node: %v", err)
 	}
 	defer client.Close()
 
@@ -93,7 +93,7 @@ func monitor(ctx *cli.Context) error {
 		if len(list) > 0 {
 			utils.Fatalf("No metrics specified.\n\nAvailable:\n - %s", strings.Join(list, "\n - "))
 		} else {
-			utils.Fatalf("No metrics collected by geth (--%s).\n", utils.MetricsEnabledFlag.Name)
+			utils.Fatalf("No metrics collected by bith (--%s).\n", utils.MetricsEnabledFlag.Name)
 		}
 	}
 	sort.Strings(monitored)
@@ -158,7 +158,7 @@ func monitor(ctx *cli.Context) error {
 	return nil
 }
 
-// retrieveMetrics contacts the attached geth node and retrieves the entire set
+// retrieveMetrics contacts the attached bith node and retrieves the entire set
 // of collected system metrics.
 func retrieveMetrics(client *rpc.Client) (map[string]interface{}, error) {
 	var metrics map[string]interface{}

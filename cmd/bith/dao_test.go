@@ -23,10 +23,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/params"
 )
 
 // Genesis block for nodes which don't care about the DAO fork (i.e. not configured)
@@ -106,7 +106,7 @@ func testDAOForkBlockNewChain(t *testing.T, test int, genesis string, expectBloc
 	datadir := tmpdir(t)
 	defer os.RemoveAll(datadir)
 
-	// Start a Geth instance with the requested flags set and immediately terminate
+	// Start a bith instance with the requested flags set and immediately terminate
 	if genesis != "" {
 		json := filepath.Join(datadir, "genesis.json")
 		if err := ioutil.WriteFile(json, []byte(genesis), 0600); err != nil {
@@ -116,11 +116,11 @@ func testDAOForkBlockNewChain(t *testing.T, test int, genesis string, expectBloc
 	} else {
 		// Force chain initialization
 		args := []string{"--port", "0", "--maxpeers", "0", "--nodiscover", "--nat", "none", "--ipcdisable", "--datadir", datadir}
-		geth := runGeth(t, append(args, []string{"--exec", "2+2", "console"}...)...)
-		geth.WaitExit()
+		bith := runGeth(t, append(args, []string{"--exec", "2+2", "console"}...)...)
+		bith.WaitExit()
 	}
 	// Retrieve the DAO config flag from the database
-	path := filepath.Join(datadir, "geth", "chaindata")
+	path := filepath.Join(datadir, "bith", "chaindata")
 	db, err := ethdb.NewLDBDatabase(path, 0, 0)
 	if err != nil {
 		t.Fatalf("test %d: failed to open test database: %v", test, err)

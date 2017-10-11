@@ -25,15 +25,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/console"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/bitherhq/go-bither/cmd/utils"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/console"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/core/state"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/trie"
 	"github.com/syndtr/goleveldb/leveldb/util"
 	"gopkg.in/urfave/cli.v1"
 )
@@ -117,7 +117,7 @@ Remove blockchain and state databases`,
 		Category: "BLOCKCHAIN COMMANDS",
 		Description: `
 The arguments are interpreted as block numbers or hashes.
-Use "ethereum dump 0" to dump the genesis block.`,
+Use "bither dump 0" to dump the genesis block.`,
 	}
 )
 
