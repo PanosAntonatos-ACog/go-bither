@@ -22,11 +22,11 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/contracts/ens/contract"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/bitherhq/go-bither/accounts/abi/bind"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/contracts/ens/contract"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/crypto"
 )
 
 var (
@@ -41,7 +41,7 @@ type ENS struct {
 }
 
 // NewENS creates a struct exposing convenient high-level operations for interacting with
-// the Ethereum Name Service.
+// the bither Name Service.
 func NewENS(transactOpts *bind.TransactOpts, contractAddr common.Address, contractBackend bind.ContractBackend) (*ENS, error) {
 	ens, err := contract.NewENS(contractAddr, contractBackend)
 	if err != nil {

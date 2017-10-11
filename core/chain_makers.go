@@ -20,14 +20,14 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/consensus/misc"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/consensus/ethash"
+	"github.com/bitherhq/go-bither/consensus/misc"
+	"github.com/bitherhq/go-bither/core/state"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/core/vm"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/params"
 )
 
 // So we can deterministically seed different blockchains

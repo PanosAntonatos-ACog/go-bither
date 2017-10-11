@@ -22,9 +22,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/crypto"
+	"github.com/bitherhq/go-bither/ethdb"
 )
 
 func newEmptySecure() *SecureTrie {

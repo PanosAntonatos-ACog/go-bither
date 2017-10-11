@@ -18,11 +18,11 @@
 package consensus
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core/state"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/params"
+	"github.com/bitherhq/go-bither/rpc"
 )
 
 // ChainReader defines a small collection of methods needed to access the local

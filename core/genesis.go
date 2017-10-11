@@ -25,15 +25,15 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/common/hexutil"
+	"github.com/bitherhq/go-bither/common/math"
+	"github.com/bitherhq/go-bither/core/state"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/params"
+	"github.com/bitherhq/go-bither/rlp"
 )
 
 //go:generate gencodec -type Genesis -field-override genesisSpecMarshaling -out gen_genesis.go
@@ -312,8 +312,8 @@ func DefaultGenesisBlock() *Genesis {
 		Config:     params.MainnetChainConfig,
 		Nonce:      66,
 		ExtraData:  hexutil.MustDecode("0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa"),
-		GasLimit:   5000,
-		Difficulty: big.NewInt(17179869184),
+		GasLimit:   134217728,
+		Difficulty: big.NewInt(10737412365),
 		Alloc:      decodePrealloc(mainnetAllocData),
 	}
 }
@@ -342,7 +342,7 @@ func DefaultRinkebyGenesisBlock() *Genesis {
 	}
 }
 
-// DevGenesisBlock returns the 'geth --dev' genesis block.
+// DevGenesisBlock returns the 'bith --dev' genesis block.
 func DevGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.AllProtocolChanges,

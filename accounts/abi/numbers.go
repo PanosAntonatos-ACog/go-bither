@@ -20,8 +20,8 @@ import (
 	"math/big"
 	"reflect"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/common/math"
 )
 
 var (

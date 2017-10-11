@@ -27,13 +27,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/p2p/discv5"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/bitherhq/go-bither/common/mclock"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/p2p"
+	"github.com/bitherhq/go-bither/p2p/discover"
+	"github.com/bitherhq/go-bither/p2p/discv5"
+	"github.com/bitherhq/go-bither/rlp"
 )
 
 const (

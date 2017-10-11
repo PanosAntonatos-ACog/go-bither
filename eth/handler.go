@@ -26,20 +26,20 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/consensus/misc"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/fetcher"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/consensus"
+	"github.com/bitherhq/go-bither/consensus/misc"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/eth/downloader"
+	"github.com/bitherhq/go-bither/eth/fetcher"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/event"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/p2p"
+	"github.com/bitherhq/go-bither/p2p/discover"
+	"github.com/bitherhq/go-bither/params"
+	"github.com/bitherhq/go-bither/rlp"
 )
 
 const (
@@ -189,7 +189,7 @@ func (pm *ProtocolManager) removePeer(id string) {
 	if peer == nil {
 		return
 	}
-	log.Debug("Removing Ethereum peer", "peer", id)
+	log.Debug("Removing Bither peer", "peer", id)
 
 	// Unregister the peer from the downloader and Ethereum peer set
 	pm.downloader.UnregisterPeer(id)

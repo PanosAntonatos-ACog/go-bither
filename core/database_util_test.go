@@ -21,11 +21,11 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/crypto/sha3"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/rlp"
 )
 
 // Tests block header storage and retrieval operations.

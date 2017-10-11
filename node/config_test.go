@@ -24,8 +24,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/bitherhq/go-bither/crypto"
+	"github.com/bitherhq/go-bither/p2p"
 )
 
 // Tests that datadirs can be successfully created, be them manually configured

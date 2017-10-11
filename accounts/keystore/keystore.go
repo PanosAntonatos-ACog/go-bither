@@ -33,11 +33,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/event"
+	"github.com/bitherhq/go-bither/accounts"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/crypto"
+	"github.com/bitherhq/go-bither/event"
 )
 
 var (

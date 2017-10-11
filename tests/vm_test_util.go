@@ -22,15 +22,15 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/common/hexutil"
+	"github.com/bitherhq/go-bither/common/math"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/core/state"
+	"github.com/bitherhq/go-bither/core/vm"
+	"github.com/bitherhq/go-bither/crypto"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/params"
 )
 
 // VMTest checks EVM execution without block or transaction context.

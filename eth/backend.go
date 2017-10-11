@@ -25,29 +25,29 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/consensus/clique"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/bloombits"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/filters"
-	"github.com/ethereum/go-ethereum/eth/gasprice"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/miner"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/bitherhq/go-bither/accounts"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/common/hexutil"
+	"github.com/bitherhq/go-bither/consensus"
+	"github.com/bitherhq/go-bither/consensus/clique"
+	"github.com/bitherhq/go-bither/consensus/ethash"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/core/bloombits"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/core/vm"
+	"github.com/bitherhq/go-bither/eth/downloader"
+	"github.com/bitherhq/go-bither/eth/filters"
+	"github.com/bitherhq/go-bither/eth/gasprice"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/event"
+	"github.com/bitherhq/go-bither/internal/ethapi"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/miner"
+	"github.com/bitherhq/go-bither/node"
+	"github.com/bitherhq/go-bither/p2p"
+	"github.com/bitherhq/go-bither/params"
+	"github.com/bitherhq/go-bither/rlp"
+	"github.com/bitherhq/go-bither/rpc"
 )
 
 type LesServer interface {
@@ -56,13 +56,13 @@ type LesServer interface {
 	Protocols() []p2p.Protocol
 }
 
-// Ethereum implements the Ethereum full node service.
+// Bither implements the Bither full node service.
 type Ethereum struct {
 	config      *Config
 	chainConfig *params.ChainConfig
 
 	// Channel for shutting down the service
-	shutdownChan  chan bool    // Channel for shutting down the ethereum
+	shutdownChan  chan bool    // Channel for shutting down the Bither
 	stopDbUpgrade func() error // stop chain db sequential key upgrade
 
 	// Handlers
@@ -97,11 +97,11 @@ func (s *Ethereum) AddLesServer(ls LesServer) {
 	s.lesServer = ls
 }
 
-// New creates a new Ethereum object (including the
-// initialisation of the common Ethereum object)
+// New creates a new Bither object (including the
+// initialisation of the common Bither object)
 func New(ctx *node.ServiceContext, config *Config) (*Ethereum, error) {
 	if config.SyncMode == downloader.LightSync {
-		return nil, errors.New("can't run eth.Ethereum in light sync mode, use les.LightEthereum")
+		return nil, errors.New("can't run bith.Bither in light sync mode, use les.LightBither")
 	}
 	if !config.SyncMode.IsValid() {
 		return nil, fmt.Errorf("invalid sync mode %d", config.SyncMode)
@@ -133,12 +133,12 @@ func New(ctx *node.ServiceContext, config *Config) (*Ethereum, error) {
 		bloomIndexer:   NewBloomIndexer(chainDb, params.BloomBitsBlocks),
 	}
 
-	log.Info("Initialising Ethereum protocol", "versions", ProtocolVersions, "network", config.NetworkId)
+	log.Info("Initialising Bither protocol", "versions", ProtocolVersions, "network", config.NetworkId)
 
 	if !config.SkipBcVersionCheck {
 		bcVersion := core.GetBlockChainVersion(chainDb)
 		if bcVersion != core.BlockChainVersion && bcVersion != 0 {
-			return nil, fmt.Errorf("Blockchain DB version mismatch (%d / %d). Run geth upgradedb.\n", bcVersion, core.BlockChainVersion)
+			return nil, fmt.Errorf("Blockchain DB version mismatch (%d / %d). Run bith upgradedb.\n", bcVersion, core.BlockChainVersion)
 		}
 		core.WriteBlockChainVersion(chainDb, core.BlockChainVersion)
 	}
@@ -182,7 +182,7 @@ func makeExtraData(extra []byte) []byte {
 		// create default extradata
 		extra, _ = rlp.EncodeToBytes([]interface{}{
 			uint(params.VersionMajor<<16 | params.VersionMinor<<8 | params.VersionPatch),
-			"geth",
+			"bith",
 			runtime.Version(),
 			runtime.GOOS,
 		})
@@ -206,7 +206,7 @@ func CreateDB(ctx *node.ServiceContext, config *Config, name string) (ethdb.Data
 	return db, nil
 }
 
-// CreateConsensusEngine creates the required type of consensus engine instance for an Ethereum service
+// CreateConsensusEngine creates the required type of consensus engine instance for an Bither service
 func CreateConsensusEngine(ctx *node.ServiceContext, config *Config, chainConfig *params.ChainConfig, db ethdb.Database) consensus.Engine {
 	// If proof-of-authority is requested, set it up
 	if chainConfig.Clique != nil {
@@ -231,7 +231,7 @@ func CreateConsensusEngine(ctx *node.ServiceContext, config *Config, chainConfig
 	}
 }
 
-// APIs returns the collection of RPC services the ethereum package offers.
+// APIs returns the collection of RPC services the Bither package offers.
 // NOTE, some of these services probably need to be moved to somewhere else.
 func (s *Ethereum) APIs() []rpc.API {
 	apis := ethapi.GetAPIs(s.ApiBackend)

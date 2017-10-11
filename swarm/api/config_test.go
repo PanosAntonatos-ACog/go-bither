@@ -23,8 +23,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/crypto"
 )
 
 var (

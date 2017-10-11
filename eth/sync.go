@@ -21,11 +21,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/eth/downloader"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/p2p/discover"
 )
 
 const (

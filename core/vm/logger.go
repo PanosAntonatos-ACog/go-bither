@@ -23,10 +23,10 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/common/hexutil"
+	"github.com/bitherhq/go-bither/common/math"
+	"github.com/bitherhq/go-bither/core/types"
 )
 
 type Storage map[common.Hash]common.Hash

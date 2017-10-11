@@ -26,11 +26,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/internal/jsre"
-	"github.com/ethereum/go-ethereum/node"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/eth"
+	"github.com/bitherhq/go-bither/internal/jsre"
+	"github.com/bitherhq/go-bither/node"
 )
 
 const (

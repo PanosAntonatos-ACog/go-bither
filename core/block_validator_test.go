@@ -21,11 +21,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/bitherhq/go-bither/consensus/ethash"
+	"github.com/bitherhq/go-bither/core/types"
+	"github.com/bitherhq/go-bither/core/vm"
+	"github.com/bitherhq/go-bither/ethdb"
+	"github.com/bitherhq/go-bither/params"
 )
 
 // Tests that simple header verification works, for both good and bad blocks.

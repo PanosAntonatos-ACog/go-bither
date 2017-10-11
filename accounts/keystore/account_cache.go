@@ -28,9 +28,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/bitherhq/go-bither/accounts"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/log"
 )
 
 // Minimum amount of time between cache reloads. This limit applies if the platform does

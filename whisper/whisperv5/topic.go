@@ -19,8 +19,8 @@
 package whisperv5
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/common/hexutil"
 )
 
 // Topic represents a cryptographically secure, probabilistic partial

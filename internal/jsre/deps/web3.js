@@ -4220,7 +4220,7 @@ var XHR2 = require('xhr2'); // jshint ignore: line
  * HttpProvider should be used to send rpc calls over http
  */
 var HttpProvider = function (host, timeout) {
-    this.host = host || 'http://localhost:8545';
+    this.host = host || 'http://localhost:7070';
     this.timeout = timeout || 0;
 };
 
@@ -5699,7 +5699,7 @@ module.exports = Shh;
  * @author Alex Beregszaszi <alex@rtfs.hu>
  * @date 2016
  *
- * Reference: https://github.com/ethereum/go-ethereum/blob/swarm/internal/web3ext/web3ext.go#L33
+ * Reference: https://github.com/bitherhq/go-bither/blob/swarm/internal/web3ext/web3ext.go#L33
  */
 
 "use strict";

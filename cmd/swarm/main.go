@@ -31,23 +31,23 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/console"
-	"github.com/ethereum/go-ethereum/contracts/ens"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/swarm"
-	bzzapi "github.com/ethereum/go-ethereum/swarm/api"
+	"github.com/bitherhq/go-bither/accounts"
+	"github.com/bitherhq/go-bither/accounts/keystore"
+	"github.com/bitherhq/go-bither/cmd/utils"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/console"
+	"github.com/bitherhq/go-bither/contracts/ens"
+	"github.com/bitherhq/go-bither/crypto"
+	"github.com/bitherhq/go-bither/ethclient"
+	"github.com/bitherhq/go-bither/internal/debug"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/node"
+	"github.com/bitherhq/go-bither/p2p"
+	"github.com/bitherhq/go-bither/p2p/discover"
+	"github.com/bitherhq/go-bither/params"
+	"github.com/bitherhq/go-bither/rpc"
+	"github.com/bitherhq/go-bither/swarm"
+	bzzapi "github.com/bitherhq/go-bither/swarm/api"
 	"gopkg.in/urfave/cli.v1"
 )
 
@@ -104,7 +104,7 @@ var (
 	EnsAPIFlag = cli.StringFlag{
 		Name:  "ens-api",
 		Usage: "URL of the Ethereum API provider to use for ENS record lookups",
-		Value: node.DefaultIPCEndpoint("geth"),
+		Value: node.DefaultIPCEndpoint("bith"),
 	}
 	EnsAddrFlag = cli.StringFlag{
 		Name:  "ens-addr",
@@ -149,7 +149,7 @@ var (
 
 var defaultNodeConfig = node.DefaultConfig
 
-// This init function sets defaults so cmd/swarm can run alongside geth.
+// This init function sets defaults so cmd/swarm can run alongside bith.
 func init() {
 	defaultNodeConfig.Name = clientIdentifier
 	defaultNodeConfig.Version = params.VersionWithCommit(gitCommit)

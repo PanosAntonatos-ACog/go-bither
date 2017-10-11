@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/swarm/storage"
+	"github.com/bitherhq/go-bither/log"
+	"github.com/bitherhq/go-bither/swarm/storage"
 )
 
 // syncer parameters (global, not peer specific) default values

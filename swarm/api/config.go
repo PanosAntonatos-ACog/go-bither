@@ -24,12 +24,12 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/contracts/ens"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/swarm/network"
-	"github.com/ethereum/go-ethereum/swarm/services/swap"
-	"github.com/ethereum/go-ethereum/swarm/storage"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/contracts/ens"
+	"github.com/bitherhq/go-bither/crypto"
+	"github.com/bitherhq/go-bither/swarm/network"
+	"github.com/bitherhq/go-bither/swarm/services/swap"
+	"github.com/bitherhq/go-bither/swarm/storage"
 )
 
 const (

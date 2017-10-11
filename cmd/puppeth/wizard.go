@@ -30,9 +30,9 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/bitherhq/go-bither/common"
+	"github.com/bitherhq/go-bither/core"
+	"github.com/bitherhq/go-bither/log"
 	"golang.org/x/crypto/ssh/terminal"
 )
 

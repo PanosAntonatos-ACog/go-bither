@@ -27,12 +27,12 @@ import (
 	"time"
 
 	"github.com/docker/docker/pkg/reexec"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/internal/cmdtest"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/swarm"
+	"github.com/bitherhq/go-bither/accounts/keystore"
+	"github.com/bitherhq/go-bither/internal/cmdtest"
+	"github.com/bitherhq/go-bither/node"
+	"github.com/bitherhq/go-bither/p2p"
+	"github.com/bitherhq/go-bither/rpc"
+	"github.com/bitherhq/go-bither/swarm"
 )
 
 func init() {
