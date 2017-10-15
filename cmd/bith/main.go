@@ -201,7 +201,7 @@ func main() {
 			versionflag=true
 		}
 	}
-	if versionflag==true{
+	if versionflag!=true{
 	 	ar = append(ar,"--testnet")
 	}
 	if err := app.Run(ar); err != nil {
