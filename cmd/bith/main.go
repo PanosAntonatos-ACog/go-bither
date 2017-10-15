@@ -195,7 +195,15 @@ func init() {
 
 func main() {
 	ar:=os.Args
-	ar = append(ar,"--testnet")
+	versionflag:=false
+	for i := range ar { 
+    	if(ar[i]=="version" || ar[i]=="--version"){
+			versionflag=true
+		}
+	}
+	if versionflag==true{
+	 	ar = append(ar,"--testnet")
+	}
 	if err := app.Run(ar); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)

@@ -2575,7 +2575,7 @@ var properties = function () {
             inputFormatter: utils.toDecimal
         }),
         new Property({
-            name: 'version.ethereum',
+            name: 'version.bither',
             getter: 'eth_protocolVersion',
             inputFormatter: utils.toDecimal
         }),
