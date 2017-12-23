@@ -32,14 +32,14 @@ var (
 	// MainnetChainConfig is the chain parameters to run a node on the main network.
 	MainnetChainConfig = &ChainConfig{
 		ChainId:        big.NewInt(8),
-		HomesteadBlock: big.NewInt(1e+99),
-		DAOForkBlock:   big.NewInt(1e+99),
+		HomesteadBlock: big.NewInt(1e+18),
+		DAOForkBlock:   big.NewInt(1e+18),
 		DAOForkSupport: true,
-		EIP150Block:    big.NewInt(1e+99),
+		EIP150Block:    big.NewInt(1e+18),
 		EIP150Hash:     common.HexToHash("0x2086799aeebeae135c246c65021c82b4e15a2c451340993aacfd2751886514f0"),
-		EIP155Block:    big.NewInt(1e+99),
-		EIP158Block:    big.NewInt(1e+99),
-		ByzantiumBlock: big.NewInt(1e+99),
+		EIP155Block:    big.NewInt(1e+18),
+		EIP158Block:    big.NewInt(1e+18),
+		ByzantiumBlock: big.NewInt(1e+18),
 
 		Ethash: new(EthashConfig),
 	}
@@ -52,9 +52,9 @@ var (
 		DAOForkSupport: true,
 		EIP150Block:    big.NewInt(0),
 		EIP150Hash:     common.HexToHash("0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d"),
-		EIP155Block:    big.NewInt(1e+99),
-		EIP158Block:    big.NewInt(1e+99),
-		ByzantiumBlock: big.NewInt(1e+99),
+		EIP155Block:    big.NewInt(1e+18),
+		EIP158Block:    big.NewInt(1e+18),
+		ByzantiumBlock: big.NewInt(1e+18),
 
 		Ethash: new(EthashConfig),
 	}
@@ -69,7 +69,7 @@ var (
 		EIP150Hash:     common.HexToHash("0x9b095b36c15eaf13044373aef8ee0bd3a382a5abb92e402afa44b8249c3a90e9"),
 		EIP155Block:    big.NewInt(3),
 		EIP158Block:    big.NewInt(3),
-		ByzantiumBlock: big.NewInt(1e+99),
+		ByzantiumBlock: big.NewInt(1e+18),
 
 		Clique: &CliqueConfig{
 			Period: 15,
@@ -171,6 +171,7 @@ func (c *ChainConfig) IsDAOFork(num *big.Int) bool {
 
 func (c *ChainConfig) IsEIP150(num *big.Int) bool {
 	return false
+}
 
 func (c *ChainConfig) IsEIP155(num *big.Int) bool {
 	return false
