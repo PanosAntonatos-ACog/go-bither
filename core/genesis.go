@@ -311,9 +311,9 @@ func DefaultGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.MainnetChainConfig,
 		Nonce:      69,
-		ExtraData:  hexutil.MustDecode("0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa"),
-		GasLimit:   17179859776,
-		Difficulty: big.NewInt(1073741236),
+		ExtraData:  nil,
+		GasLimit:   4000000,
+		Difficulty: big.NewInt(7000000000),
 		Alloc:      decodePrealloc(mainnetAllocData),
 	}
 }
@@ -323,9 +323,9 @@ func DefaultTestnetGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.TestnetChainConfig,
 		Nonce:      69,
-		ExtraData:  hexutil.MustDecode("0x3535353535353535353535353535353535353535353535353535353535353535"),
-		GasLimit:   24903456,
-		Difficulty: big.NewInt(1556466),
+		ExtraData:  nil,
+		GasLimit:   8000000,
+		Difficulty: big.NewInt(2000000),
 		Alloc:      decodePrealloc(testnetAllocData),
 	}
 }
@@ -335,9 +335,9 @@ func DefaultRinkebyGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.RinkebyChainConfig,
 		Timestamp:  1492009146,
-		ExtraData:  hexutil.MustDecode("0x52657370656374206d7920617574686f7269746168207e452e436172746d616e42eb768f2244c8811c63729a21a3569731535f067ffc57839b00206d1ad20c69a1981b489f772031b279182d99e65703f0076e4812653aab85fca0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"),
+		ExtraData:  nil,
 		GasLimit:   4700000,
-		Difficulty: big.NewInt(1),
+		Difficulty: big.NewInt(3000000),
 		Alloc:      decodePrealloc(rinkebyAllocData),
 	}
 }
