@@ -23,3 +23,4 @@ const mainnetAllocData="\xf8c\xe0\x94&x\x88\xf1\xc5-Q\xe70\xc0\u046bz\r;\x01\ucc
 const testnetAllocData = "\xe2\u151c\x98\x94\x9e3\xe9a9\xe1\xb57\xd8M\xf4\x01\xe2JJJ\u03cb\x04\"\u028b\n\x00\xa4%\x00\x00\x00"
 const rinkebyAllocData = "\xc0"
 const devAllocData = "\xc0"
+
