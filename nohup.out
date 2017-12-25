@@ -1,0 +1,16 @@
+WARN [12-25|14:58:57] No etherbase set and no accounts found as default 
+INFO [12-25|14:58:57] Starting peer-to-peer node               instance=Bith/v1.7.1-stable-8490539d/linux-amd64/go1.9.2
+INFO [12-25|14:58:57] Allocated cache and file handles         database=/home/mainnetdata/bith/chaindata cache=128 handles=1024
+INFO [12-25|14:58:57] Initialised chain configuration          config="{ChainID: 8 Homestead: 1000000000000000000 DAO: 1000000000000000000 DAOSupport: false EIP150: 1000000000000000000 EIP155: 1000000000000000000 EIP158: 1000000000000000000 Byzantium: 1000000000000000000 Engine: ethash}"
+INFO [12-25|14:58:57] Disk storage enabled for ethash caches   dir=/home/mainnetdata/bith/ethash count=3
+INFO [12-25|14:58:57] Disk storage enabled for ethash DAGs     dir=/root/.ethash                 count=2
+INFO [12-25|14:58:57] Initialising Bither protocol             versions="[63 62]" network=1
+INFO [12-25|14:58:57] Loaded most recent local header          number=0 hash=32ab29…430192 td=7000000000
+INFO [12-25|14:58:57] Loaded most recent local full block      number=0 hash=32ab29…430192 td=7000000000
+INFO [12-25|14:58:57] Loaded most recent local fast block      number=0 hash=32ab29…430192 td=7000000000
+INFO [12-25|14:58:57] Loaded local transaction journal         transactions=0 dropped=0
+INFO [12-25|14:58:57] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [12-25|14:58:57] Starting P2P networking 
+INFO [12-25|14:58:59] UDP listener up                          self=enode://b8e3b8341f75eb108c5e0195fd386782e3e6c79dd8fb4e437289b57aac0cfa0d3d29aa2067fecc7661ba43b8ed8461e3d21d90075791f349117bc8a1e6645839@[::]:41207
+INFO [12-25|14:58:59] RLPx listener up                         self=enode://b8e3b8341f75eb108c5e0195fd386782e3e6c79dd8fb4e437289b57aac0cfa0d3d29aa2067fecc7661ba43b8ed8461e3d21d90075791f349117bc8a1e6645839@[::]:41207
+INFO [12-25|14:58:59] IPC endpoint opened: /home/mainnetdata/bith.ipc 
